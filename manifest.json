@@ -1,0 +1,30 @@
+{
+  "name": "Wonder Koprivnica",
+  "short_name": "Wonder Koprivnica",
+  "description": "A map of koprivnica that makes it easier to explore",
+  "icons": [
+    {
+      "src": "./d_colon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/d_colon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "fullscreen",
+  "theme_color": "#d97706",
+  "background_color": "#0445db",
+  "shortcuts": [
+    {
+      "name": "Locations",
+      "short_name": "Locations",
+      "description": "View locations",
+      "url": "/locations",
+      "icons": [{ "src": "/d_colon.png", "sizes": "192x192" }]
+    }
+  ]
+}

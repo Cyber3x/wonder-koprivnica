@@ -1,0 +1,29 @@
+{
+  "nav": {
+    "map": "Karta",
+    "locations": "Lokacije"
+  },
+
+  "popup": {
+    "read_more": "Pročitaj više"
+  },
+
+  "tags": {
+    "all": "Sve",
+    "city": "Grad",
+    "drink": "Piće",
+    "food": "Hrana",
+    "history": "Povijest",
+    "nature": "Priroda",
+    "sport": "Sport",
+    "dance": "Ples"
+  },
+
+  "pages": {
+    "location": {
+      "show_on_map": "Pokaži na karti",
+      "more_images": "Više fotografija",
+      "location_tags": "Tagovi lokacije"
+    }
+  }
+}

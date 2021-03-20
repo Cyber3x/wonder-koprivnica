@@ -1,0 +1,29 @@
+{
+  "nav": {
+    "map": "Map",
+    "locations": "Locations"
+  },
+
+  "popup": {
+    "read_more": "Read more"
+  },
+
+  "tags": {
+    "all": "All",
+    "city": "City",
+    "drink": "Drink",
+    "food": "Food",
+    "history": "History",
+    "nature": "Nature",
+    "sport": "Sport",
+    "dance": "Dance"
+  },
+
+  "pages": {
+    "location": {
+      "show_on_map": "Show on map",
+      "more_images": "More images",
+      "location_tags": "Location tags"
+    }
+  }
+}
