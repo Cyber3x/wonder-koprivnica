@@ -24,7 +24,8 @@ i18n
     detection: {
       checkWhitelist: true,
     },
-    debug: process.env.NODE_ENV !== 'production',
+    // debug: process.env.NODE_ENV !== 'production',
+    debug: true,
 
     whitelist: avalibleLanguages,
 

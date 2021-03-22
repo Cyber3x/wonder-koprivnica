@@ -6,7 +6,6 @@ import image3 from '../assets/Desktop2.jpg'
 import image4 from '../assets/Anavar-Winstrol-cycle-together.jpg'
 import image5 from '../assets/autumn-leaves-cold-dry-leaves-2681631.jpg'
 import image6 from '../assets/zetong-li-rXXSIr8-f9w-unsplash.jpg'
-import { useTranslation } from 'react-i18next'
 
 export const useLocationsStore = create(() => ({
   locations: [

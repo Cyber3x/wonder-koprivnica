@@ -1,16 +1,11 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
 import { useParams, useHistory } from 'react-router-dom'
 import { useLocationsStore } from '../stores/locationsStore'
-
-const capitalize = (word) => {
-  const [first, ...rest] = word.split('')
-  return [first.toUpperCase(), ...rest].join('')
-}
+import { useLanguageStore } from '../stores/languageStore'
 
 const LocationPage = () => {
   const { id } = useParams()
-  const { t } = useTranslation()
+  const t = useLanguageStore((state) => state.t)
   const history = useHistory()
   const location = useLocationsStore((state) => state.locations[id])
   const { mainImg, title, text, desc, tags, moreImages, coords } = location

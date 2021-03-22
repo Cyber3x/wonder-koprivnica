@@ -9,9 +9,10 @@ import {
 } from 'react-leaflet'
 import L from 'leaflet'
 
-import geojson from '../assets/geojson.json'
+// import geojson from '../assets/geojson.json'
 
 import shallow from 'zustand/shallow'
+import { useLanguageStore } from '../stores/languageStore'
 import { useMapStore } from '../stores/mapStore'
 import { useLocationsStore } from '../stores/locationsStore'
 import { useLocation } from 'react-router-dom'
@@ -21,7 +22,6 @@ import NavButtons from '../components/NavButtons'
 import icon from 'leaflet/dist/images/marker-icon.png'
 import iconShadow from 'leaflet/dist/images/marker-shadow.png'
 import LocationPopup from '../components/LocationPopup'
-import { useTranslation } from 'react-i18next'
 
 let DefaultIcon = new L.Icon({
   iconUrl: icon,
@@ -40,21 +40,25 @@ const MapControl = ({ _setZoom, _setPosition }) => {
       const { lat, lng } = e.popup.getLatLng()
       map.panTo([lat, lng])
 
-      let newGeojson = geojson.features[0].geometry.coordinates.map((coord) => [
-        coord[0],
-        coord[1],
-      ])
-      // console.log(newGeojson)
+      // let newGeojson = geojson.features[0].geometry.coordinates.map((coord) => [
+      //   coord[0],
+      //   coord[1],
+      // ])
+      // // console.log(newGeojson)
 
-      let polyline = new L.Polyline(newGeojson, { color: 'red' }).addTo(map)
-      console.log(polyline)
+      // let polyline = new L.Polyline(newGeojson, { color: 'red' }).addTo(map)
+      // console.log(polyline)
     },
   })
   return null
 }
 
 const LandingPage = () => {
-  const { i18n } = useTranslation()
+  const [t, language, changeLanguage] = useLanguageStore(
+    (state) => [state.t, state.language, state.changeLanguage],
+    shallow
+  )
+
   const location = useLocation()
   const [map, setMap] = React.useState(null)
 
@@ -105,8 +109,8 @@ const LandingPage = () => {
     //     { timeout: 500 }
     //   )
     // }
-    i18n.changeLanguage(i18n.language === 'hr' ? 'en' : 'hr')
-    console.log(geojson)
+    changeLanguage(language === 'hr' ? 'en' : 'hr')
+    // console.log(geojson)
   }
 
   return (
@@ -149,12 +153,12 @@ const LandingPage = () => {
             _setPosition={(pos) => setPosition(pos)}
             _setZoom={(zoom) => setZoom(zoom)}
           />
-          <Polyline
+          {/* <Polyline
             positions={geojson.features[0].geometry.coordinates.map((coord) => [
               coord[0],
               coord[1],
             ])}
-          />
+          /> */}
         </MapContainer>
       </div>
       <div
@@ -162,7 +166,7 @@ const LandingPage = () => {
         style={{ zIndex: 1000 }}
         onClick={handleTestButtonClick}
       >
-        {i18n.language[0].toUpperCase() + i18n.language.substr(1)}
+        {language}
       </div>
       <NavButtons />
     </div>

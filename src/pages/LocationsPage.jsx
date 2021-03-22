@@ -1,8 +1,8 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
 import LocationCard from '../components/LocationCard'
 import NavButtons from '../components/NavButtons'
 
+import { useLanguageStore } from '../stores/languageStore'
 import { useLocationsStore } from '../stores/locationsStore'
 
 const capitalize = (word) => {
@@ -11,7 +11,7 @@ const capitalize = (word) => {
 }
 
 const FilterList = ({ className, setFilterTag, filterTag }) => {
-  const { t } = useTranslation()
+  const t = useLanguageStore((state) => state.t)
   let tags = useLocationsStore((state) =>
     state.locations.reduce((sum, location) => sum.concat(location.tags), [])
   )

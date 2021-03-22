@@ -1,10 +1,10 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
 import { Popup } from 'react-leaflet'
 import { Link } from 'react-router-dom'
+import { useLanguageStore } from '../stores/languageStore'
 
 const LocationPopup = ({ info }) => {
-  const { t } = useTranslation()
+  const t = useLanguageStore((state) => state.t)
   const { title, mainImg, id } = info
   return (
     <Popup autoPan={false}>

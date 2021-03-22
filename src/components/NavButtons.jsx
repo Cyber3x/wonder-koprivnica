@@ -1,6 +1,6 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
 import { Link, useLocation } from 'react-router-dom'
+import { useLanguageStore } from '../stores/languageStore'
 
 const NavButton = ({ text, to, className }) => {
   const location = useLocation()
@@ -20,7 +20,8 @@ const NavButton = ({ text, to, className }) => {
   )
 }
 const NavButtons = ({ fixed }) => {
-  const { t } = useTranslation()
+  const t = useLanguageStore((state) => state.t)
+
   return (
     <div
       className={
