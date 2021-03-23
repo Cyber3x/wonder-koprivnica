@@ -8,7 +8,14 @@ const get_nested = (p, o) =>
 
 export const useLanguageStore = create((set, get) => ({
   language: 'hr',
-  changeLanguage: (language) => set({ language }),
+  checkLanguage: () => {
+    const language = localStorage.getItem('language')
+    language ? set({ language }) : null
+  },
+  changeLanguage: (language) => {
+    set({ language })
+    localStorage.setItem('language', language)
+  },
   t: (key) => get_nested(key.split('.'), get().translations[get().language]),
   translations: {
     en,

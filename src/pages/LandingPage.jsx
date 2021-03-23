@@ -26,7 +26,8 @@ import LocationPopup from '../components/LocationPopup'
 let DefaultIcon = new L.Icon({
   iconUrl: icon,
   iconShadow: iconShadow,
-  popupAnchor: [13, 1],
+  popupAnchor: [4, -41],
+  iconAnchor: [10, 40],
 })
 
 const MapControl = ({ _setZoom, _setPosition }) => {
@@ -38,7 +39,10 @@ const MapControl = ({ _setZoom, _setPosition }) => {
     },
     popupopen: (e) => {
       const { lat, lng } = e.popup.getLatLng()
-      map.panTo([lat, lng])
+      let point = map.latLngToContainerPoint([lat, lng])
+      point = L.point([point.x, point.y - 150])
+      const newLatLng = map.containerPointToLatLng(point)
+      map.panTo(newLatLng)
 
       // let newGeojson = geojson.features[0].geometry.coordinates.map((coord) => [
       //   coord[0],
@@ -54,8 +58,28 @@ const MapControl = ({ _setZoom, _setPosition }) => {
 }
 
 const LandingPage = () => {
-  const [t, language, changeLanguage] = useLanguageStore(
-    (state) => [state.t, state.language, state.changeLanguage],
+  const [t, language, changeLanguage, checkLanguage] = useLanguageStore(
+    (state) => [
+      state.t,
+      state.language,
+      state.changeLanguage,
+      state.checkLanguage,
+    ],
+    shallow
+  )
+
+  const locationInfo = useLocationsStore((state) =>
+    state.locations.map(({ id, coords, mainImg, title, text }) => ({
+      id,
+      coords,
+      mainImg,
+      title,
+      text,
+    }))
+  )
+
+  const [position, zoom, setPosition, setZoom] = useMapStore(
+    (state) => [state.position, state.zoom, state.setPosition, state.setZoom],
     shallow
   )
 
@@ -64,19 +88,9 @@ const LandingPage = () => {
 
   const [userCoords, setUserCoords] = React.useState({})
 
-  const locationInfo = useLocationsStore((state) =>
-    state.locations.map(({ id, coords, mainImg, title }) => ({
-      id,
-      coords,
-      mainImg,
-      title,
-    }))
-  )
-
-  const [position, zoom, setPosition, setZoom] = useMapStore(
-    (state) => [state.position, state.zoom, state.setPosition, state.setZoom],
-    shallow
-  )
+  React.useEffect(() => {
+    checkLanguage()
+  }, [])
 
   React.useEffect(() => {
     if (location.state && map) {
@@ -98,19 +112,7 @@ const LandingPage = () => {
   }, [map])
 
   const handleTestButtonClick = () => {
-    // if (navigator.geolocation) {
-    //   navigator.geolocation.getCurrentPosition(
-    //     (pos) => {
-    //       console.log(pos)
-    //     },
-    //     (error) => {
-    //       console.log(error)
-    //     },
-    //     { timeout: 500 }
-    //   )
-    // }
     changeLanguage(language === 'hr' ? 'en' : 'hr')
-    // console.log(geojson)
   }
 
   return (
@@ -123,7 +125,7 @@ const LandingPage = () => {
           center={position}
           zoom={zoom}
           zoomControl={false}
-          minZoom={4}
+          minZoom={3}
           whenCreated={setMap}
           maxBounds={[
             [-89.98155760646617, -180],
@@ -136,7 +138,7 @@ const LandingPage = () => {
           />
           <ZoomControl position='bottomright' />
 
-          {locationInfo.map((info, index) => (
+          {locationInfo.map((info) => (
             <Marker position={info.coords} key={info.id} icon={DefaultIcon}>
               <LocationPopup info={info} />
             </Marker>

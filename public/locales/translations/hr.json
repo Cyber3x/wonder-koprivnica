@@ -23,7 +23,18 @@
     "location": {
       "show_on_map": "Pokaži na karti",
       "more_images": "Više fotografija",
-      "location_tags": "Tagovi lokacije"
+      "location_tags": "Tagovi lokacije",
+      "description": "Opis",
+      "official_pages": "Službene stranice"
+    }
+  },
+
+  "location": {
+    "podravka": {
+      "text": "Prava žila kucavica grada, Podravka je pomogla Koprivnici naći svoje mjesto među najbitnijim gradovima Hrvatske. Do izgradnje njezine prethodnice, a sad jednog od krila, Danice početkom 1900-tih Koprivnica je bila mali barokni gradić/utvrda. No sve se to mijenja nastankom Danice i Podravke koje pretvaraju vojnu utvrdu Habsburške Monarhije u industrijsku utvrdu Jugoslavije. Kao i sve velike stvari u povijesti stvorili su ju dva brata Marijan i Matija Wolf. U početku je bila tvrtka za prodaju voća i povrća. No svoje pravo ja Podravka nalazi u Jugoslaviji kada kreće proizvoditi juhe u vrećicama i svjetski poznati začin Vegetu. Njezin zaštitni znak pijevac bio je prepoznatljivi znak diljem Jugoslavije i postavio Koprivnicu na kartu u obliku pravog industrijskog grada. Podravka širi svoja krila još jače krajem 1900-tih osnivanjem farmaceutske kompanije Belupo, treće najveće svoje vrste u Hrvatskoj. Ova tri dijela, Danica, Belupo i Podravka, čine industrijsku kičmu Koprivnice koja se unatoč maloj populaciji može natjecati s najvećim i najboljim Hrvatske. Danas Podravka izvozi u 60 država svijeta od moćnog zapada SAD-a i Kanade sve do mističnog istoka Kineskog carstva. U čarima Vegete uživaju svi od vukova s Wall Streeta do bivših faraona Egipta i nezaobilazni je proizvod na policama istočne Europe. Ako već niste, potičemo Vas da probate i pridružite se uvijek rastućoj Podravkinoj obitelji."
+    },
+    "danica": {
+      "text": "Logor \"Danica\" je bio prvi ustaški sabirni logor u blizini Koprivnice osnovan 29. travnja 1941. godine. Nalazio se u prostorijama nekadašnje tvornice umjetnih gnojiva \"Danica\" u Koprivnici. U noći od 22. na 23. lipnja 1941. zatvorenici uglavnom Židovi su bili privedeni u logor \"Danicu\". Specijalnom naredbom od 8. srpnja 1941. organiziran je transport zatvorenika u logor. Logor Danica ukinut je u jesen 1941. godine. Od lipnja do prosinca 1945. je logor Danica ponovno profunkcionirao i u prvom redu služio za deportaciju zarobljenika u ruske gulage, pretežito diljem Sibira, odakle se do prije 1990. skoro nitko više nije vratio. Spomen područje „Danica“ kao izdvojena organizacija Muzeja grada Koprivnice dio je javnog kulturnog dobra o kojem je potrebna posebna briga, jer se radi o prostoru kolektivne memorije na žrtve Drugog svjetskog rata."
     }
   }
 }

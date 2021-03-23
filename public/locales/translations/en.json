@@ -23,7 +23,18 @@
     "location": {
       "show_on_map": "Show on map",
       "more_images": "More images",
-      "location_tags": "Location tags"
+      "location_tags": "Location tags",
+      "description": "Description",
+      "official_pages": "Official pages"
+    }
+  },
+
+  "location": {
+    "podravka": {
+      "text": "The city’s true heart, Podravka helped Koprivnica find its place among the most important cities in Croatia. Before her predecessor, and now one of its wings, Danica was built in the early 20th century, Koprivnica was a small baroque town/fort. But it all changed when Danica and Podravka were created together transforming Koprivnica from an austro-hungarian military fort into a yugoslavian industrial fort. Like all things great it was created by two brothers, Marijan and Matija Wolf. It started as a fruit and vegetable retailer and producer. However it would come to its real power in Yugoslavia when it started making soups and its world famous spice “Vegeta”. Its symbol, the rooster, became recognisable all over Yugoslavia and put Koprivnica on the map as an industrial powerhouse. It expanded even further by the end of the 20th century with the foundation of the Belupo pharmaceutical company which is currently the third largest pharmaceutical company in Croatia. The three headed industrial hydra of Koprivnica consists of Danica, Belupo and Podravka and despite a small population size it keeps up with the rest of Croatia. Today Podravka exports to 60 countries worldwide from the powerful American west to the mystical east of China. Vegeta is enjoyed everywhere from the wolves of Wall Street to the ex pharaohs of Egypt and its presence is unavoidable on the shelves of Europe. If you haven’t already we encourage you to try it and join the ever growing Podravka family."
+    },
+    "danica": {
+      "text": "The \"Danica\" camp was the first Ustasha concentration camp near Koprivnica, founded on April 29, 1941. It was located in the premises of the former fertilizer factory \"Danica\" in Koprivnica. On the night of June 22-23, 1941, prisoners, mostly Jewish, were taken to the Danica camp. By a special order of July 8, 1941, the transport of prisoners to the camp was organized. The Danica camp was abolished in the fall of 1941. From June to December 1945, the Danica camp became operational once again and was primarily used to deport prisoners to Russian gulags, mostly in Siberia, from where until 1990 almost none returned. The memorial area \"Danica\", as a separate organization of the Museum of Koprivnica, is a part of a public cultural good that deserves special care because it is a space of collective memory for the victims of the Second World War."
     }
   }
 }

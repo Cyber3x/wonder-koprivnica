@@ -4,27 +4,29 @@
   "description": "A map of koprivnica that makes it easier to explore",
   "icons": [
     {
-      "src": "./d_colon.png",
-      "sizes": "32x32",
+      "src": "./public/images/icons/favicon1.png",
+      "sizes": "726x726",
       "type": "image/png"
     },
     {
-      "src": "/d_colon.png",
+      "src": "./public/images/icons/favicon1.png",
       "sizes": "512x512",
       "type": "image/png"
     }
   ],
   "start_url": "/",
   "display": "fullscreen",
-  "theme_color": "#d97706",
-  "background_color": "#0445db",
+  "theme_color": "#047857",
+  "background_color": "#10b981",
   "shortcuts": [
     {
       "name": "Locations",
       "short_name": "Locations",
       "description": "View locations",
       "url": "/locations",
-      "icons": [{ "src": "/d_colon.png", "sizes": "192x192" }]
+      "icons": [
+        { "src": "./public/images/icons/favicon1.png", "sizes": "726x726" }
+      ]
     }
   ]
 }
