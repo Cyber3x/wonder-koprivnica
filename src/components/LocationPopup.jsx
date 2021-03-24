@@ -8,7 +8,9 @@ const LocationPopup = ({ info }) => {
   const { title, mainImg, id, text } = info
   return (
     <Popup autoPan={false}>
-      <h1 className='text-lg mb-2 w-56'>{title}</h1>
+      <h1 className='text-lg mb-2 w-56'>
+        {title.split('.').length == 3 ? t(title) : title}
+      </h1>
       <img src={mainImg} className='w-56 rounded-md' />
       {text && (
         <h1 className='w-56 mt-3 mb-4 line-clamp-3 text-gray-500 text-md'>

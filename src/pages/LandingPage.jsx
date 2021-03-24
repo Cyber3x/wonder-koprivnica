@@ -94,7 +94,7 @@ const LandingPage = () => {
 
   React.useEffect(() => {
     if (location.state && map) {
-      map.setView(location.state.panTo, 15)
+      map.setView(location.state.panTo, 17)
       location.state = {}
     }
 

@@ -23,7 +23,7 @@ const LocationPage = () => {
       <div className='bg-white p-4 '>
         {/* TITEL */}
         <h1 className='text-4xl font-medium text-gray-600 items-center flex w-full mb-4'>
-          {title}
+          {title.split('.').length == 3 ? t(title) : title}
         </h1>
 
         {/* GO TO MAP BUTTON */}
@@ -42,12 +42,16 @@ const LocationPage = () => {
         <p className='text-gray-800 text-sm'>{t(text)}</p>
 
         {/* PHOTOS */}
-        <Header>{t('pages.location.more_images')}</Header>
-        <div className='flex overflow-x-scroll mt-2 h-72'>
-          {moreImages.map((image, i) => (
-            <img src={image} className='mr-2 object-cover' key={i} />
-          ))}
-        </div>
+        {moreImages && moreImages.length > 0 && (
+          <>
+            <Header>{t('pages.location.more_images')}</Header>
+            <div className='flex overflow-x-scroll mt-2 h-72'>
+              {moreImages.map((image, i) => (
+                <img src={image} className='mr-2 object-cover' key={i} />
+              ))}
+            </div>
+          </>
+        )}
 
         {/* PAGES */}
         {links && links.length != 0 && (
@@ -58,7 +62,7 @@ const LocationPage = () => {
             links.map(({ lable, link }, i) => (
               <li key={i}>
                 <a className='text-green-600' href={link} target='_blank'>
-                  {lable}
+                  {lable.split('.').length === 3 ? t(lable) : lable}
                 </a>
               </li>
             ))}
