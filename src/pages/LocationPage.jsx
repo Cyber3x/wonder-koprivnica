@@ -43,7 +43,7 @@ const LocationPage = () => {
 
         {/* PHOTOS */}
         <Header>{t('pages.location.more_images')}</Header>
-        <div className='flex overflow-x-scroll mt-2'>
+        <div className='flex overflow-x-scroll mt-2 h-72'>
           {moreImages.map((image, i) => (
             <img src={image} className='mr-2 object-cover' key={i} />
           ))}

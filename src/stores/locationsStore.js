@@ -1,11 +1,9 @@
 import create from 'zustand'
 
-import podravka1 from '/images/podravka1.jpg'
-import podravka2 from '/images/podravka2.jpg'
+import podravka1 from '/images/podravka/1.jpg'
+import podravka2 from '/images/podravka/2.jpg'
 
-import danica1 from '/images/danica1.jpg'
-import danica2 from '/images/danica2.jpg'
-import danica3 from '/images/danica3.jpg'
+import danica1 from '/images/danica/danica1.jpg'
 
 export const useLocationsStore = create(() => ({
   locations: [
@@ -25,11 +23,131 @@ export const useLocationsStore = create(() => ({
       tags: ['city', 'history'],
       mainImg: danica1,
       coords: [46.1867, 16.834],
-      moreImages: [danica2, danica3],
+      moreImages: [danica1],
       text: 'location.danica.text',
       links: [
         { lable: 'Muzej Koprivnica', link: 'http://www.muzej-koprivnica.hr/' },
       ],
+    },
+    {
+      id: 2,
+      title: 'Antun Nemčić Gostovinski',
+      tags: ['city', 'history'],
+      mainImg: danica1,
+      coords: [46.16048, 16.82926],
+      moreImages: [danica1],
+      text: 'location.antun_nemcic_gostovinski.text',
+      links: [
+        { lable: 'Antun Nemčić Gostovniski', link: 'http://www.osang-kc.hr/' },
+      ],
+    },
+    {
+      id: 3,
+      title: 'Villa Parva',
+      tags: ['city', 'history', 'drink'],
+      mainImg: danica1,
+      coords: [46.16393, 16.82983],
+      moreImages: [danica1],
+      text: 'location.villa_parva.text',
+    },
+    {
+      id: 4,
+      title: 'Crkva Sv. Nikole',
+      tags: ['city', 'history'],
+      mainImg: danica1,
+      coords: [46.1612, 16.83137],
+      moreImages: [danica1],
+      text: 'location.crkva_sv_nikole.text',
+    },
+    {
+      id: 5,
+      title: 'Park',
+      tags: ['city', 'nature', 'sport'],
+      mainImg: danica1,
+      coords: [46.16176, 16.83078],
+      moreImages: [danica1],
+      text: 'location.park.text',
+    },
+    {
+      id: 6,
+      title: 'Vojarna',
+      tags: ['history', 'nature'],
+      mainImg: danica1,
+      coords: [46.17568, 16.84215],
+      moreImages: [danica1],
+      text: 'location.vojarna.text',
+    },
+    {
+      id: 7,
+      title: 'Sud',
+      tags: ['city', 'history'],
+      mainImg: danica1,
+      coords: [46.16285, 16.82794],
+      moreImages: [danica1],
+      text: 'location.sud.text',
+    },
+    {
+      id: 8,
+      title: 'Stadion',
+      tags: ['city', 'sport'],
+      mainImg: danica1,
+      coords: [46.1663, 16.83479],
+      moreImages: [danica1],
+      text: 'location.stadion.text',
+    },
+    {
+      id: 9,
+      title: 'Sinagoga',
+      tags: ['city', 'history'],
+      mainImg: danica1,
+      coords: [46.16432, 16.83207],
+      moreImages: [danica1],
+      text: 'location.sinagoga.text',
+    },
+    {
+      id: 10,
+      title: 'Podravkin Rekreacijski Centar',
+      tags: ['nature', 'sport', 'drink', 'food'],
+      mainImg: danica1,
+      coords: [46.1272, 16.8075],
+      moreImages: [danica1],
+      text: 'location.prc.text',
+    },
+    {
+      id: 11,
+      title: 'Muzej Prehrane',
+      tags: ['drink', 'food', 'history', 'city'],
+      mainImg: danica1,
+      coords: [46.15391, 16.82445],
+      moreImages: [danica1],
+      text: 'location.muzej_prehrane.text',
+    },
+    {
+      id: 12,
+      title: 'Muzej Grada',
+      tags: ['history', 'city'],
+      mainImg: danica1,
+      coords: [46.15984, 16.83156],
+      moreImages: [danica1],
+      text: 'location.muzej_grada.text',
+    },
+    {
+      id: 13,
+      title: 'Gradska Palača',
+      tags: ['history', 'city'],
+      mainImg: danica1,
+      coords: [46.16135, 16.83192],
+      moreImages: [danica1],
+      text: 'location.gradska_palaca.text',
+    },
+    {
+      id: 14,
+      title: 'Galerija',
+      tags: ['history', 'city'],
+      mainImg: danica1,
+      coords: [46.16348, 16.83068],
+      moreImages: [danica1],
+      text: 'location.galerija.text',
     },
   ],
 }))
