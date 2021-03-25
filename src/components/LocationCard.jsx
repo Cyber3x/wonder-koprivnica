@@ -2,13 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useLanguageStore } from '../stores/languageStore'
 
-const LocationCard = ({ className, location }) => {
+const LocationCard = ({ className, location, style }) => {
   const { title, mainImg, id, text } = location
   const t = useLanguageStore((state) => state.t)
 
   return (
     <Link to={`/location/${id}`}>
       <div
+        style={style}
         className={
           'bg-white rounded-lg py-2 px-3 shadow-md mb-4' + ' ' + className
         }

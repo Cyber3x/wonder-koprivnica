@@ -1,7 +1,8 @@
 {
   "nav": {
     "map": "Map",
-    "locations": "Locations"
+    "locations": "Locations",
+    "routes": "Routes"
   },
 
   "popup": {
@@ -25,6 +26,14 @@
       "location_tags": "Location tags",
       "description": "Description",
       "official_pages": "Official pages"
+    },
+
+    "routes": {
+      "south_route": "South route",
+      "north_route": "North route",
+      "average_length": "Average length",
+      "show_locations": "Show locations on this route",
+      "hide_locations": "Stop showing locations on this route"
     }
   },
 

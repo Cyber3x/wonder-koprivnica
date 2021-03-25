@@ -42,7 +42,7 @@ const LocationsPage = () => {
 
   let locations = useLocationsStore((state) => state.locations)
   // locations = locations.sort((a, b) =>
-  //   a.title > b.title ? 1 : b.title > a.title ? -1 : 0
+  //   t(a.title) < t(b.title) ? -1 : t(a.title) > t(b.title) ? 1 : 0
   // )
   const [displayLocations, setDisplayLocations] = React.useState(locations)
 

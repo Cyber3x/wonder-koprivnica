@@ -40,7 +40,13 @@ const NavButtons = ({ fixed }) => {
         className={'border-r border-gray-200'}
       />
 
-      <NavButton to='/' text={t('nav.map')} />
+      <NavButton
+        to='/'
+        text={t('nav.map')}
+        className={'border-r border-gray-200'}
+      />
+
+      <NavButton to='/routes' text={t('nav.routes')} />
     </div>
   )
 }

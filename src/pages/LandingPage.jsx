@@ -4,12 +4,12 @@ import {
   TileLayer,
   ZoomControl,
   useMapEvents,
-  Polyline,
   Marker,
 } from 'react-leaflet'
 import L from 'leaflet'
 
-// import geojson from '../assets/geojson.json'
+import route_south from '../../public/route-south.json'
+import route_north from '../../public/route-north.json'
 
 import shallow from 'zustand/shallow'
 import { useLanguageStore } from '../stores/languageStore'
@@ -30,6 +30,9 @@ let DefaultIcon = new L.Icon({
   iconAnchor: [10, 40],
 })
 
+const formatCoords = (geojson) =>
+  geojson.features[0].geometry.coordinates.map((coord) => [coord[1], coord[0]])
+
 const MapControl = ({ _setZoom, _setPosition }) => {
   const map = useMapEvents({
     moveend: () => {
@@ -43,28 +46,18 @@ const MapControl = ({ _setZoom, _setPosition }) => {
       point = L.point([point.x, point.y - 150])
       const newLatLng = map.containerPointToLatLng(point)
       map.panTo(newLatLng)
-
-      // let newGeojson = geojson.features[0].geometry.coordinates.map((coord) => [
-      //   coord[0],
-      //   coord[1],
-      // ])
-      // // console.log(newGeojson)
-
-      // let polyline = new L.Polyline(newGeojson, { color: 'red' }).addTo(map)
-      // console.log(polyline)
     },
   })
   return null
 }
 
 const LandingPage = () => {
-  const [t, language, changeLanguage, checkLanguage] = useLanguageStore(
-    (state) => [
-      state.t,
-      state.language,
-      state.changeLanguage,
-      state.checkLanguage,
-    ],
+  const location = useLocation()
+
+  const [map, setMap] = React.useState(null)
+
+  const [language, changeLanguage, checkLanguage] = useLanguageStore(
+    (state) => [state.language, state.changeLanguage, state.checkLanguage],
     shallow
   )
 
@@ -78,37 +71,44 @@ const LandingPage = () => {
     }))
   )
 
-  const [position, zoom, setPosition, setZoom] = useMapStore(
-    (state) => [state.position, state.zoom, state.setPosition, state.setZoom],
+  const [position, zoom, setPosition, setZoom, routes] = useMapStore(
+    (state) => [
+      state.position,
+      state.zoom,
+      state.setPosition,
+      state.setZoom,
+      state.routes,
+    ],
     shallow
   )
 
-  const location = useLocation()
-  const [map, setMap] = React.useState(null)
+  const polyline_south_route = new L.polyline(formatCoords(route_south), {
+    color: 'blue',
+    weight: 4,
+  })
 
-  const [userCoords, setUserCoords] = React.useState({})
+  const polyline_north_route = new L.polyline(formatCoords(route_north), {
+    color: 'green',
+    weight: 4,
+  })
 
   React.useEffect(() => {
     checkLanguage()
   }, [])
 
   React.useEffect(() => {
-    if (location.state && map) {
+    if (location.state && map && location.state.length > 0) {
       map.setView(location.state.panTo, 17)
       location.state = {}
     }
 
-    // if (navigator.geolocation) {
-    //   navigator.geolocation.watchPosition(
-    //     (pos) => {
-    //       setUserCoords(pos.coords)
-    //     },
-    //     (error) => {
-    //       console.log('[ERROR GETTING LOCATION]: ', error)
-    //     },
-    //     { timeout: 500 }
-    //   )
-    // }
+    if (map && routes.south) {
+      polyline_south_route.addTo(map)
+    }
+
+    if (map && routes.north) {
+      polyline_north_route.addTo(map)
+    }
   }, [map])
 
   const handleTestButtonClick = () => {
@@ -144,23 +144,17 @@ const LandingPage = () => {
             </Marker>
           ))}
 
-          {userCoords.latitude && userCoords.latitude && (
+          {/* {userCoords.latitude && userCoords.latitude && (
             <Marker
               position={[userCoords.latitude, userCoords.longitude]}
               icon={DefaultIcon}
             ></Marker>
-          )}
+          )} */}
 
           <MapControl
             _setPosition={(pos) => setPosition(pos)}
             _setZoom={(zoom) => setZoom(zoom)}
           />
-          {/* <Polyline
-            positions={geojson.features[0].geometry.coordinates.map((coord) => [
-              coord[0],
-              coord[1],
-            ])}
-          /> */}
         </MapContainer>
       </div>
       <div

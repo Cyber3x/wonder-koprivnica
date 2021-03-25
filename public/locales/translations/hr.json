@@ -1,7 +1,8 @@
 {
   "nav": {
     "map": "Karta",
-    "locations": "Lokacije"
+    "locations": "Lokacije",
+    "routes": "Rute"
   },
 
   "popup": {
@@ -25,6 +26,14 @@
       "location_tags": "Tagovi lokacije",
       "description": "Opis",
       "official_pages": "Službene stranice"
+    },
+
+    "routes": {
+      "south_route": "Južna ruta",
+      "north_route": "Sjeverna ruta",
+      "average_length": "Prosječno trajanje",
+      "show_locations": "Pokaži lokacije na ovoj ruti",
+      "hide_locations": "Prestani pokazivati lokacije na ovoj ruti"
     }
   },
 
