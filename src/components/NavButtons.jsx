@@ -25,7 +25,7 @@ const NavButtons = ({ fixed }) => {
   return (
     <div
       className={
-        'w-full h-12 flex justify-between bottom-0 bg-white' +
+        'w-full h-12 flex justify-between bottom-0 bg-white max-h-12' +
         (fixed ? ' fixed' : '')
       }
       style={{
