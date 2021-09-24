@@ -11,9 +11,9 @@ const App = () => {
   return (
     <Router>
       <Switch>
-        <Route exact path='/locations' component={LocationsPage} />
-        <Route exact path='/location/:id' component={LocationPage} />
-        <Route exact path='/routes' component={RoutesPage} />
+        <Route path='/locations' component={LocationsPage} />
+        <Route path='/location/:id' component={LocationPage} />
+        <Route path='/routes' component={RoutesPage} />
         <Route path='/' component={LandingPage} />
       </Switch>
     </Router>

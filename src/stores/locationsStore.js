@@ -89,7 +89,7 @@ export const useLocationsStore = create(() => ({
     },
     {
       id: 1,
-      title: 'Danica',
+      title: 'location.danica.title',
       tags: ['city', 'history'],
       mainImg: danica2,
       coords: [46.1867, 16.834],
@@ -146,8 +146,8 @@ export const useLocationsStore = create(() => ({
     },
     {
       id: 5,
-      title: 'Park',
-      tags: ['city', 'nature', 'sport'],
+      title: 'location.park.title',
+      tags: ['city', 'nature', 'sport', 'fun'],
       mainImg: park1,
       coords: [46.16176, 16.83078],
       moreImages: [park2, park3, park4, park5],
@@ -171,7 +171,7 @@ export const useLocationsStore = create(() => ({
     {
       id: 7,
       title: 'location.sud.title',
-      tags: ['city', 'history'],
+      tags: ['city'],
       mainImg: sud3,
       coords: [46.16285, 16.82794],
       moreImages: [sud1, sud2, sud4],
@@ -186,7 +186,7 @@ export const useLocationsStore = create(() => ({
     {
       id: 8,
       title: 'location.stadion.title',
-      tags: ['city', 'sport'],
+      tags: ['city', 'sport', 'fun'],
       mainImg: stadion1,
       coords: [46.1663, 16.83479],
       moreImages: [stadion2, stadion3],
@@ -210,7 +210,7 @@ export const useLocationsStore = create(() => ({
     {
       id: 10,
       title: 'Podravkin Rekreacijski Centar',
-      tags: ['nature', 'sport', 'drink', 'food'],
+      tags: ['nature', 'sport', 'drink', 'food', 'fun'],
       mainImg: prc1,
       coords: [46.1272, 16.8075],
       moreImages: [prc2, prc3, prc4, prc5],
@@ -225,7 +225,7 @@ export const useLocationsStore = create(() => ({
     {
       id: 11,
       title: 'location.muzej_prehrane.title',
-      tags: ['drink', 'food', 'history', 'city'],
+      tags: ['history', 'city'],
       mainImg: muzej_prehrane1,
       coords: [46.15391, 16.82445],
       moreImages: [

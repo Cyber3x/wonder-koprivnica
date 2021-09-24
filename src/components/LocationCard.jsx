@@ -18,7 +18,9 @@ const LocationCard = ({ className, location, style }) => {
           {title.split('.').length == 3 ? t(title) : title}
         </h1>
         <p className='text-gray-400 text-sm line-clamp-3'>{t(text)}</p>
-        <img src={mainImg} className='mt-3 mb-2 rounded-lg' />
+        <div className=' aspect-w-3 aspect-h-2 mt-3 mb-2 rounded-lg overflow-hidden'>
+          <img src={mainImg} className='object-cover' />
+        </div>
       </div>
     </Link>
   )

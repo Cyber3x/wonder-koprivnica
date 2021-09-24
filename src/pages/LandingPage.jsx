@@ -97,7 +97,7 @@ const LandingPage = () => {
   }, [])
 
   React.useEffect(() => {
-    if (location.state && map && location.state.length > 0) {
+    if (location.state && map) {
       map.setView(location.state.panTo, 17)
       location.state = {}
     }
@@ -120,7 +120,7 @@ const LandingPage = () => {
       className='flex flex-col relative'
       style={{ height: window.innerHeight }}
     >
-      <div className='flex h-full w-screen'>
+      <div className='flex-1 flex-grow'>
         <MapContainer
           center={position}
           zoom={zoom}

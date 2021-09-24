@@ -35,7 +35,9 @@ const LocationPage = () => {
         </h1>
 
         {/* MAIN IMAGE */}
-        <img src={mainImg} />
+        <div className='aspect-w-3 aspect-h-2 overflow-hidden'>
+          <img src={mainImg} className='object-cover' />
+        </div>
 
         {/* DESCRIPTION */}
         <Header>{t('pages.location.description')}</Header>
